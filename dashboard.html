@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('db.jpg'); /* Change 'your_background_image.jpg' to the path of your background image */
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .container {
+            width: 600px;
+            margin: 200px auto;
+            padding: 20px;
+            background-color: #8ad1f7;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+            align-items: center;
+        
+        }
+        
+        
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #042760;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="align-items: center;">      WELCOME..!!</h2>
+        
+        <h2>Book your Flight with Ease</h2>
+        <br>
+        <form method="post" action="dashboard.php">
+            <button class="button" type="submit" name="admin_login">Admin Login</button>
+            <button class="button" type="submit" name="user_login">User Login</button>
+            <button class="button" type="submit" name="data_provider_login">Data Provider Login</button>
+        </form>
+    </div>
+</body>
+</html>

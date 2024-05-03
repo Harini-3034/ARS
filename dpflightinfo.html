@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Information Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('flightinfo.avif'); /* Change 'your_background_image.jpg' to the path of your background image */
+      background-attachment: fixed;
+      background-size: cover
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    select, input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Flight Information Form</h1>
+    <form action="dpflightinfo.php" method="post" onsubmit="return validateForm()">
+      <label for="origin">Flight Origin:</label>
+      <select name="origin" id="origin">
+        <option value="">Select Origin</option>
+        <option value="India">India</option>
+        <option value="France">France</option>
+        <option value="USA">USA</option>
+        <option value="Italy">Italy</option>
+        <option value="China">China</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Russia">Russia</option>
+      </select>
+
+      <label for="destination">Flight Destination:</label>
+      <select name="destination" id="destination">
+        <option value="">Select Origin</option>
+        <option value="India">India</option>
+        <option value="France">France</option>
+        <option value="USA">USA</option>
+        <option value="Italy">Italy</option>
+        <option value="China">China</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Russia">Russia</option> 
+      </select>
+
+      <label for="flight_id">Flight ID:</label>
+      <input type="text" name="flight_id" id="flight_id">
+
+      <label for="takeoff_time">Take-off Time:</label>
+      <input type="time" name="takeoff_time" id="takeoff_time">
+
+      <label for="price">Price:</label>
+      <input type="text" name="price" id="price">
+
+      <label for="seat_class">Seat Class:</label>
+      <select name="seat_class" id="seat_class">
+        <option value="">Select Seat Class</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="Premium Economy">Premium Economy</option>
+      </select>
+
+      <input type="submit" value="Submit">
+      <br>
+      <a href="dphome.html">Go home</a>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      var flightIdInput = document.getElementById('flight_id');
+      var flightIdPattern = /^[A-Za-z]{2}[0-9]{3}$/;
+      var priceInput = document.getElementById('price');
+      var pricePattern = /^\d+$/;
+
+      if (!flightIdPattern.test(flightIdInput.value)) {
+        alert("Flight ID should contain 2 alphabets followed by 3 numbers");
+        return false;
+      }
+
+      if (!pricePattern.test(priceInput.value)) {
+        alert("Price should contain only numbers.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>

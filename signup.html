@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        background-image: url('bg.avif'); /* Change 'your_background_image.jpg' to the path of your background image */
+        background-attachment: fixed;
+        background-size: cover; /* Cover the entire viewport */
+    }
+    .container {
+        width: 400px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    input[type="password"],
+    input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .signup-btn {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .signup-btn:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm" method="post" action="signup.php" onsubmit="return validateForm()">
+        <input type="text" name="name" id="name" placeholder="Name" required><br>
+        <input type="date" name="dob" id="dob" placeholder="Date of Birth" required><br>
+        <input type="email" name="email" id="email" placeholder="Email" required><br>
+        <input type="text" name="passport" id="passport" placeholder="Passport Number" required><br>
+        <input type="tel" name="mobile" id="mobile" placeholder="Mobile Number" required><br>
+        <div>
+            Gender:
+            <br>
+            <input type="radio" name="gender" value="male" id="male" required>
+            <label for="male">Male</label>
+            <br>
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label>
+            <br>
+            <input type="radio" name="gender" value="other" id="other">
+            <label for="other">Other</label>
+        </div>
+        <br>
+        <input type="password" name="password" id="password" placeholder="Set your Password" required> <br>
+        <br>
+        <button type="submit" class="signup-btn">Sign up</button> 
+    </form>
+    <p text> Already have an account? <a href="loginpage.html">Log in</a></p>
+</div>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var passport = document.getElementById("passport").value;
+    var password = document.getElementById("password").value;
+    var mobile = document.getElementById("mobile").value;
+    
+    // Regular expressions for validation
+    var nameRegex = /^[a-zA-Z]+$/;
+    var passportRegex = /^\d{1,10}$/;
+    var passwordRegex = /^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?=(?:\D*\d){2})(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{1,8}$/;
+    var mobileRegex = /^\d{10}$/;
+
+    if (!name.match(nameRegex)) {
+        alert("Please enter only alphabets for Name.");
+        return false;
+    }
+    
+    if (!passport.match(passportRegex)) {
+        alert("Passport Number should be numeric and not exceed 10 numbers.");
+        return false;
+    }
+    
+    if (!password.match(passwordRegex)) {
+        alert("Password should contain at least 2 alphabets, 2 numbers, and only one special character, and be at most 8 characters long.");
+        return false;
+    }
+
+    if (!mobile.match(mobileRegex)) {
+        alert("Mobile Number should be exactly 10 digits.");
+        return false;
+    }
+
+    return true;
+}
+</script>
+</body>
+</html>

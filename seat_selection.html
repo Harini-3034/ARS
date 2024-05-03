@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            background-image: url('seat.webp'); /* Change 'your_background_image.jpg' to the path of your background image */
+            background-attachment: fixed;
+            background-size: 100% 100%; /* Cover the entire viewport */
+          
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Seats</h2>
+        <form action="seat_selection.php" method="POST">
+            <div class="form-group">
+                <label for="totalseat">Total Seats:</label>
+                <input type="number" id="totalseat" name="totalseat" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="male">Number of Male Passengers:</label>
+                <input type="number" id="male" name="male" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="female">Number of Female Passengers:</label>
+                <input type="number" id="female" name="female" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="child">Number of Child Passengers:</label>
+                <input type="number" id="child" name="child" min="0" required>
+            </div>
+            
+            <button type="submit">Confirm Seats</button>
+        </form>
+    </div>
+</body>
+</html>

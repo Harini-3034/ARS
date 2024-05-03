@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System - Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('search.jpg'); /* Change 'your_background_image.jpg' to the path of your background image */
+            background-attachment: fixed;
+            background-size: cover; /* Cover the entire viewport */
+            
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input[type="password"]{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search Flights</h2>
+        <form id="flightSearchForm" action="displayinfo.php" method="GET">
+            <div class="form-group">
+                <label for="origin">From:</label>
+                <select id="origin" name="origin" required>
+                    <option value="">Select Origin</option>
+                    <option value="India">India</option>
+                    <option value="France">France</option>
+                    <option value="USA">USA</option>
+                    <option value="Italy">Italy</option>
+                    <option value="China">China</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Russia">Russia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="destination">To:</label>
+                <select id="destination" name="destination" required>
+                    <option value="">Select Destination</option>
+                    <option value="India">India</option>
+                    <option value="France">France</option>
+                    <option value="USA">USA</option>
+                    <option value="Italy">Italy</option>
+                    <option value="China">China</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Russia">Russia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seat_calss">Seat Class:</label>
+                <select id="seat_class" name="seat_class" required>
+                    <option value="">Select Seat Class</option>
+                    <option value="Economy">Economy</option>
+                    <option value="Business">Business</option>
+                    <option value="Premium Economy">Premiun Economy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label> Travel date: <input type="date" name="td" placeholder="traveldate" required></label>
+                
+            </div>
+            
+            
+            <button type="submit">Search Flights</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById("flightSearchForm");
+            form.addEventListener("submit", function(event) {
+                var travelDateInput = document.getElementsByName("td")[0];
+                var travelDate = new Date(travelDateInput.value);
+                var today = new Date();
+
+                // Check if the selected date is today or a past date
+                if (travelDate <= today) {
+                    event.preventDefault(); // Prevent form submission
+                    alert("Please select a travel date that is today or in the future.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

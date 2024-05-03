@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - India</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('china.jpeg'); /* Replace 'background.jpg' with your background image */
+            background-size: 100% 100%;
+            background-attachment: fixed; /* Background image doesn't scroll with the page */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .flight {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .flight h2 {
+            margin-top: 0;
+        }
+        .flight p {
+            margin-bottom: 10px;
+        }
+        .select-seat-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .select-seat-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flights - China</h1>
+        <!-- Flight Container 1 -->
+        <div class="flight">
+            <h2>Flight ID: C101</h2>
+            <p>Takeoff Time: 08:00 AM</p>
+            <button class="select-seat-btn" onclick="location.href='seat_selection.html?flight_id=AI101';">Select Seat</button>
+        </div>
+        <!-- Flight Container 2 -->
+        <div class="flight">
+            <h2>Flight ID: C102</h2>
+            <p>Takeoff Time: 10:30 AM</p>
+            <button class="select-seat-btn" onclick="location.href='seat_selection.html?flight_id=AI102';">Select Seat</button>
+        </div>
+        <!-- Flight Container 3 -->
+        <div class="flight">
+            <h2>Flight ID: C103</h2>
+            <p>Takeoff Time: 12:30 PM</p>
+            <button class="select-seat-btn" onclick="location.href='seat_selection.html?flight_id=AI102';">Select Seat</button>
+        </div>
+        <!-- Flight Container 4 -->
+        <div class="flight">
+            <h2>Flight ID: C104</h2>
+            <p>Takeoff Time: 03:00 PM</p>
+            <button class="select-seat-btn" onclick="location.href='seat_selection.html?flight_id=AI102';">Select Seat</button>
+        </div>
+        <!-- Flight Container 5 -->
+        <div class="flight">
+            <h2>Flight ID: C105</h2>
+            <p>Takeoff Time: 06:30 PM</p>
+            <button class="select-seat-btn" onclick="location.href='seat_selection.html?flight_id=AI102';">Select Seat</button>
+        </div>
+        
+    </div>
+</body>
+</html>
